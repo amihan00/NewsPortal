@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  .title {
+    width: 200px;
+    margin: 10px 0px;
+  }
+
+  .searchbar {
+    margin: 5px 15px;
+    width: 100px;
+  }
+
+  .category-buttons {
+    text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+
+    :hover {
+      cursor: pointer;
+    }
+
+    .category-button {
+      background: none;
+      border: none;
+      padding: 10px;
+
+      border-bottom: solid 3px;
+
+      font-weight: bold;
+    }
+
+    .general-button {
+      border-color: blue;
+    }
+
+    .business-button {
+      border-color: green;
+    }
+
+    .entertainment-button {
+      border-color: yellow;
+    }
+
+    .health-button {
+      border-color: red;
+    }
+
+    .science-button {
+      border-color: aqua;
+    }
+
+    .sports-button {
+      border-color: lightgreen;
+    }
+
+    .technology-button {
+      border-color: purple;
+    }
+
+    .favorite-button {
+      border-color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .category-buttons {
+    width: 450px;
+    flex-wrap: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+  }
+}

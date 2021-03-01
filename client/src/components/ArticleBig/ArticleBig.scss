@@ -1,0 +1,47 @@
+.article-big {
+  padding: 10px;
+  margin: 10px;
+  width: 800px;
+  margin: auto;
+
+  .publish-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .article-description {
+    margin: 30px 0;
+  }
+
+  .article-image {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .article-content {
+    margin: 30px 0;
+  }
+
+  .button-container {
+    text-align: center;
+  }
+
+  .favorite-button {
+    background: rgb(95, 175, 95);
+    border: none;
+
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .article-big {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .article-big {
+    width: 400px;
+  }
+}

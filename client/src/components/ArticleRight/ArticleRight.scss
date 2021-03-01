@@ -1,0 +1,15 @@
+.article-right {
+  padding: 10px;
+  margin: 15px 0;
+  background: rgb(236, 236, 236);
+
+  .article-image {
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .article-title {
+    margin: 5px 0 0 0;
+    pointer-events: none;
+  }
+}

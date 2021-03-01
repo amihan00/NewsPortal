@@ -7,5 +7,4 @@ export default interface Article {
   urlToImage: string;
   publishedAt: string;
   content: string;
-  favorite?: boolean;
 }
