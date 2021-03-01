@@ -1,8 +1,7 @@
-import express = require("express");
-import bodyParser = require("body-parser");
-import cors = require("cors");
-import axios = require("axios");
-import { AxiosResponse } from "axios";
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+import axios, { AxiosResponse } from "axios";
 
 const app = express();
 const port = 8080;
@@ -27,7 +26,6 @@ interface Article {
 }
 
 let category = "";
-let first = true;
 let articles: Article[];
 
 try {
@@ -39,28 +37,16 @@ try {
       "http://newsapi.org/v2/top-headlines?" +
       "country=us&" +
       category +
+      "pageSize=50&" +
       "apiKey=73600983d13f448dae4397bfa5d9c1d5";
 
-    /* const url: string =
-      "http://newsapi.org/v2/top-headlines?" +
-      "country=us&" +
-      category +
-      "apiKey=edece67483754325ba1dcf933eca8a48"; */
-
-    console.log(url);
-
-    if (first == true) {
-      await axios
-        // @ts-expect-error Typescript complains about get property
-        .get(url)
-        .then((response: AxiosResponse) => {
-          articles = response.data.articles;
-          console.log("getting...");
-        })
-        .catch((error) => console.log(error))
-        .then();
-      first = false;
-    }
+    await axios
+      .get(url)
+      .then((response: AxiosResponse) => {
+        articles = response.data.articles;
+      })
+      .catch((error) => console.log(error))
+      .then();
 
     res.status(200).json(articles);
   });
