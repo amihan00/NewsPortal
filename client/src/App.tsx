@@ -54,7 +54,7 @@ export default function App() {
 
   useEffect(() => {
     getArticles();
-  }, [filtered]);
+  }, [filtered, category]);
 
   return (
     <div className="wrapper">

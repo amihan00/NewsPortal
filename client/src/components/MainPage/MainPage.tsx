@@ -24,7 +24,6 @@ export default function MainPage() {
     ArticlesState,
     ArticlesState["filteredArticles"]
   >((state) => state.filteredArticles);
-  console.log(filtered);
 
   if (showFavorites == false) {
     articles = useSelector<ArticlesState, ArticlesState["articles"]>(
@@ -67,7 +66,7 @@ export default function MainPage() {
         </div>
         <div className="articles-right-container">
           {articlesToShow
-            .slice(divideArticles + 1, articlesToShow.length)
+            .slice(divideArticles, articlesToShow.length)
             .map((article, index) => {
               return (
                 <Link

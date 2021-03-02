@@ -28,12 +28,6 @@ export const articlesReducer = (
     case "CLEAR_ARTICLES":
       return { ...state, articles: [] };
 
-    case "CHANGE_CATEGORY":
-      return {
-        ...state,
-        category: action.payload,
-      };
-
     case "FETCH_FILTERED":
       let temp: Article[] = state.articles.filter((article: Article) => {
         return article.title
@@ -43,18 +37,22 @@ export const articlesReducer = (
       console.log(temp);
 
       if (temp.length == 0) {
-        console.log("temp=0");
         return {
           ...state,
           filteredArticles: state.articles,
         };
       } else {
-        console.log("temp>>>0");
         return {
           ...state,
           filteredArticles: temp,
         };
       }
+
+    case "CHANGE_CATEGORY":
+      return {
+        ...state,
+        category: action.payload,
+      };
 
     case "ADD_FAVORITE":
       return {
@@ -65,7 +63,6 @@ export const articlesReducer = (
     case "REMOVE_FAVORITE":
       const index: number = state.favoriteArticles.indexOf(action.payload);
       if (index !== -1) {
-        /* state.favoriteArticles.splice(index, 1); */
         return {
           ...state,
           favoriteArticles: state.favoriteArticles.filter(

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import { ArticlesState } from "../../articlesReducer";
 import { fetchFiltered, changeCategory, showFavorites } from "../../actions";
@@ -21,6 +22,7 @@ export default function Header() {
 
   const onChangeCategory = (category: string) => {
     dispatch(changeCategory(category));
+    axios.post("http://localhost:8080/setCategory", { category: category });
     onShowFavorites(false);
   };
 
